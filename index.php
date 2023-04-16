@@ -53,12 +53,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 display: none !important;
             }
         </style>
-
-
+        
         <a href="#" onclick="doGTranslate('ru|ru');return false;" title="Russian" class="gflag nturl"
            style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16"
                                                         alt="German"/></a>
-
 
         <div id="google_translate_element2"></div>
 
@@ -121,10 +119,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             <?php
             include 'parseSait.php';
             $url = "";
-            if (isset($_POST["url"])) {
-                $url = $_POST["url"];
-                $id = parseId($_POST["url"]);
-                $f = parseSait($_POST["url"]);
+            if (isset($_POST["url"])) {                                    
+                $url = mb_eregi_replace('[а-яё]', '', $_POST["url"]);               
+                $id = parseId($url);
+                $f = parseSait($url);
                 $etap = 'url';
             }
             ?> 
@@ -146,9 +144,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <div id="eng">
             <?php
             if (isset($_POST["url"])) {
-                $url = $_POST["url"];
-                $id = parseId($_POST["url"]);
-                $f = parseSait($_POST["url"]);
+                $url = mb_eregi_replace('[а-яё]', '', $_POST["url"]);               
+                $id = parseId($url);
+                $f = parseSait($url);
             }
             if (isset($_POST["eng"]) && $_POST["eng"] != '') {
                 $eng = $_POST["eng"];
@@ -169,9 +167,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <div id="rus">
             <?php
             if (isset($_POST["url"])) {
-                $url = $_POST["url"];
-                $id = parseId($_POST["url"]);
-                $f = parseSait($_POST["url"]);
+                $url = mb_eregi_replace('[а-яё]', '', $_POST["url"]);               
+                $id = parseId($url);
+                $f = parseSait($url);
             }
             if (isset($_POST["rus"]) && $_POST["rus"] != '') {
                 if (preg_match('/[А-Яа-яЁё]/u', $_POST["rus"])) {

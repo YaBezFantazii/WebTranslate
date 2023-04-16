@@ -52,12 +52,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 $test = $test . '-----------------------------------------';
                 $res = array();
                 $num++;
-                if ($num == 10) {
-                    $file = $nach . '-' . $nach+9 . '.txt';
+                if ($num == 30) {
+                    $file = $nach . '-' . $nach+29 . '.txt';
                     $files = file_put_contents($file, $test);
                     $test = '';
                     $num = 0;
-                    $nach = $nach + 10;
+                    $nach = $nach + 30;
                 }
             }
             $files = file_put_contents('text.txt', $test);
