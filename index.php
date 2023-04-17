@@ -150,8 +150,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             }
             if (isset($_POST["eng"]) && $_POST["eng"] != '') {
                 $eng = $_POST["eng"];
-                $con = new PDO("mysql:host=localhost;dbname=worktest", "test", "12456");
-                $row = $con->exec("INSERT INTO work2( glava, textEng ) VALUES ('$id','$eng')");
+                $con = new PDO("mysql:host=localhost;dbname=worktest", "test", "12345");
+                $row = $con->exec("INSERT INTO work2 ( glava, textEng ) VALUES ('$id','$eng')");
                 $etap = 'eng';
             }
             ?>
@@ -174,7 +174,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             if (isset($_POST["rus"]) && $_POST["rus"] != '') {
                 if (preg_match('/[А-Яа-яЁё]/u', $_POST["rus"])) {
                     $rus = $_POST["rus"];
-                    $con = new PDO("mysql:host=localhost;dbname=worktest", "test", "12456");
+                    $con = new PDO("mysql:host=localhost;dbname=worktest", "test", "12345");
                     $sql = "UPDATE work2 SET textRus=? WHERE glava=?";
                     $stmt = $con->prepare($sql);
                     $stmt->execute([$rus, $id]);
@@ -209,9 +209,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         </div>
 
 
-        <div class="id" id=id'><?php echo $etap; ?></div>
-        <div class="id2" id=id2'><?php echo '<br>' . $id; ?></div>
-        <div class="main" id=main'>
+        <div class="id" id="id"><?php echo $etap; ?></div>
+        <div class="id2" id="id2"><?php echo '<br>' . $id; ?></div>
+        <div class="notranslate" id="main">
             <?php echo $url; ?>
             <br>
             <input id="botk" type="submit" onclick="scrolls();" value="bot" style="height:100px; width:500px"/>

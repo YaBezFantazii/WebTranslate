@@ -16,7 +16,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 echo '<a href=' . $lis . ' download>' . $lis . '</a>';
                 echo '<br>';
             }
-            $con = new PDO("mysql:host=localhost;dbname=worktest", "test", "12456");
+            $con = new PDO("mysql:host=localhost;dbname=worktest", "test", "12345");
             $row = $con->prepare("SELECT * FROM work2 ORDER BY glava");
             $row->execute();
             $res = array();

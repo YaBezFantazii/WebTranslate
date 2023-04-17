@@ -1,13 +1,13 @@
 function urlEng() {
     document.getElementsByName('eng')[0].value =
             document.getElementsByClassName('entry-content wp-block-post-content has-global-padding is-layout-constrained')[0].innerText;
-    document.getElementsByName('url')[1].value = document.getElementsByClassName('main')[0].innerText;
+    document.getElementsByName('url')[1].value = document.getElementsByClassName('notranslate')[0].innerText;
 }
 
 function urlRus() {
     document.getElementsByName('rus')[0].value =
             document.getElementsByClassName('entry-content wp-block-post-content has-global-padding is-layout-constrained')[0].innerText;
-    document.getElementsByName('url')[2].value = document.getElementsByClassName('main')[0].innerText;
+    document.getElementsByName('url')[2].value = document.getElementsByClassName('notranslate')[0].innerText;
 }
 
 function zagr() {
